@@ -21,11 +21,11 @@ d <-
 
 ## Now we have everything to draw the histogram
 
-# We will store the historam into file "plot1.png"
-png(filename = "plot1.png", width = 480, height = 480)
-
 # Drawing
 hist(d$Global_active_power, col="red", main="Global Active Power", ylim = c(0,1200), xlab = "Global Active Power (kilowatts)", ylab="Frequency")
+
+# We will save the historam into file "plot1.png"
+dev.copy(png, filename = "plot1.png", width = 480, height = 480)
 
 # Stop drawing and release file
 dev.off()

@@ -21,8 +21,6 @@ d <-
 
 ## Now we have everything to draw the diagram
 
-# We will store the diagram into file "plot2.png"
-png(filename = "plot2.png", width = 480, height = 480)
 
 # Drawing
 # NOTE
@@ -30,6 +28,9 @@ png(filename = "plot2.png", width = 480, height = 480)
 # 
 
 plot(x=d$DateTime, y=d$Global_active_power, t="l", main="", xlab="", ylab = "Global Active Power (kilowatts)")
+
+# We will save the diagram into file "plot2.png"
+dev.copy(png, filename = "plot2.png", width = 480, height = 480)
 
 # Stop drawing and release file
 dev.off()

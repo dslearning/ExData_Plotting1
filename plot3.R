@@ -21,8 +21,6 @@ d <-
 
 ## Now we have everything to draw the diagram
 
-# We will store the diagram into file "plot3.png"
-png(filename = "plot3.png", width = 480, height = 480)
 
 # Drawing
 plot(x=d$DateTime, y=d$Sub_metering_1, t="l", main="", xlab="", ylab = "Energy sub metering", col="black")
@@ -33,5 +31,9 @@ lines(x=d$DateTime, y=d$Sub_metering_3, t="l", col="blue")
 # Position - top right
 legend("topright", c("Sub_metering_1","Sub_metering_2","Sub_metering_3") ,  lty=1, col=c("black","red", "blue"), bty='o', cex=.75)
 
+# We will save the diagram into file "plot3.png"
+dev.copy(png, filename = "plot3.png", width = 480, height = 480)
+
 # Stop drawing and release file
 dev.off()
+
